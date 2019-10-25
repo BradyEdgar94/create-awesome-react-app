@@ -1,6 +1,6 @@
 {
   "name": "create-awesome-react-app",
-  "version": "1.2.3",
+  "version": "1.2.7",
   "description": "A CLI for building awesome React apps with headless CMS",
   "bin": {
     "@bradyedgar/create-awesome-react-app": "bin/create-project",

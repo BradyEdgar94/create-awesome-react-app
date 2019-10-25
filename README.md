@@ -13,7 +13,10 @@ To get started install the command as a global package.
 
 ## Running Command
 
-Now you will have access to the `create-awesome-react-app` command.  Before running the command make sure to create a directory for your project and then `cd` into that project..
+Now you will have access to the `create-awesome-react-app` command.  Before running the command make sure to create a directory for your project and then `cd` into that project.
+
+-
+	> Running at least node verison 9, SQL is running, can create domains for local repos (MAMP PRO)
 
 	mkdir myProject
 	cd myProject
@@ -27,4 +30,4 @@ There are a number of options you can pass when running `create-awesome-react-ap
 |----------------|-------------------------------|-----------------------------|
 |--git           |Installs git to your repo      |false                        |
 |--ignoreInstall |Ignore installing dependencies |false                        |
-|--yes           |Skips the promps               |false                        |
+|--yes           |Skips the prompts              |false                        |

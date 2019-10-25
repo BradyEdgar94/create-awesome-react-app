@@ -116,7 +116,7 @@ export async function promoptForMAMPUpdate (options) {
   questions.push({
     type: 'comfirm',
     name: 'mampUpdated',
-    message: `Add ${options.cmsUrl} to MAMP PRO`,
+    message: `Point ${options.cmsUrl} to ${options.targetDirectory}/api`,
     default: 'done'
   })
 
