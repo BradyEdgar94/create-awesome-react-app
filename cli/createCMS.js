@@ -40,6 +40,10 @@ export default async function createCMS (options) {
       task: () => createDatabase(options)
     },
     {
+      title: 'Configure app',
+      task: () => configureProject(options)
+    },
+    {
       title: 'Configure API',
       task: () => htaccessFile(options)
     }
@@ -48,6 +52,15 @@ export default async function createCMS (options) {
   await tasks.run()
 
   return true
+}
+
+async function configureProject (options) {
+  return fs.writeFile(
+    `${options.targetDirectory}/app/app.config.json`,
+    JSON.stringify(appConfig(options), null, 4),
+    'utf8',
+    err => err ? console.log(`%s Issue writing the app.config.json file:  ${err}`, chalk.red.bold('ERROR')) : ''
+  )
 }
 
 async function htaccessFile (options) {

@@ -20,10 +20,7 @@ export default function cloneCMS (options) {
       handleGitUrl(options.template.toLowerCase()),
       `${options.targetDirectory}/api`,
       {},
-      (res) => {
-        console.log('################################', res);
-        resolve(true)
-      }
+      (res) => resolve(true)
     )
   })
 }
