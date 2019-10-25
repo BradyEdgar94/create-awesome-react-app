@@ -40,12 +40,12 @@ export default async function createCMS (options) {
       task: () => createDatabase(options)
     },
     {
-      title: 'Configure app',
-      task: () => configureProject(options)
-    },
-    {
       title: 'Configure API',
       task: () => htaccessFile(options)
+    },
+    {
+      title: 'Configure app',
+      task: () => configureProject(options)
     }
   ])
 

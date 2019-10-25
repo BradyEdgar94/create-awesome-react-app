@@ -1,6 +1,6 @@
-export default () => ({
+export default ({ cmsUrl }) => ({
   API_HOSTS: {
-    development: "http://api.ferox.local",
+    development: cmsUrl,
     staging: "[API STAGING DOMAIN]",
     production: "[API PRODUCTION DOMAIN]"
   },
