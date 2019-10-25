@@ -19,9 +19,12 @@ export default function cloneTemplate (options) {
   return new Promise((resolve, reject) => {
   clone(
     handleGitUrl(options.template.toLowerCase()),
-    `${options.targetDirectory}/app`
+    `${options.targetDirectory}/app`,
+    {},
+    (res) => {
+      console.log('################################', res);
+      resolve(true)
+    }
   )
-
-    resolve(true)
   })
 }
