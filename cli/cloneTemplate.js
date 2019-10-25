@@ -16,10 +16,12 @@ export default function cloneTemplate (options) {
     return url
   }
 
+  return new Promise((resolve, reject) => {
   clone(
     handleGitUrl(options.template.toLowerCase()),
     `${options.targetDirectory}/app`
   )
 
-  return
+    resolve(true)
+  })
 }
