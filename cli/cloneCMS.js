@@ -1,6 +1,6 @@
-const Git = require('nodegit')
+import clone from 'git-clone'
 
-export default async function cloneCMS (options) {
+export default function cloneCMS (options) {
   function handleGitUrl (template) {
     let url = 'https://github.com/BradyEdgar94/wordpress-headless-cms-next.git'
     switch (template) {
@@ -15,15 +15,9 @@ export default async function cloneCMS (options) {
     return url
   }
 
-  await Git.Clone(
+  clone(
     handleGitUrl(options.template.toLowerCase()),
     `${options.targetDirectory}/api`
   )
-    .catch(err => {
-      if (err) {
-        throw err
-      }
-    })
-
     return
 }

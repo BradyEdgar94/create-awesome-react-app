@@ -1,6 +1,6 @@
-const Git = require('nodegit')
+import clone from 'git-clone'
 
-export default async function cloneTemplate (options) {
+export default function cloneTemplate (options) {
   function handleGitUrl (template) {
     let url = 'https://github.com/BradyEdgar94/react-nextjs-boilerplate.git'
 
@@ -16,15 +16,10 @@ export default async function cloneTemplate (options) {
     return url
   }
 
-  await Git.Clone(
+  clone(
     handleGitUrl(options.template.toLowerCase()),
-    `${options.targetDirectory}/frontend`
+    `${options.targetDirectory}/app`
   )
-    .catch(err => {
-      if (err) {
-        throw err
-      }
-    })
 
-    return
+  return
 }

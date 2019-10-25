@@ -1,6 +1,6 @@
 {
   "name": "create-awesome-react-app",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A CLI for building awesome React apps with headless CMS",
   "bin": {
     "@bradyedgar/create-awesome-react-app": "bin/create-project",
@@ -22,10 +22,12 @@
     "child_process": "^1.0.2",
     "esm": "^3.2.25",
     "execa": "^3.2.0",
+    "git-clone": "^0.1.0",
     "inquirer": "^7.0.0",
+    "knex": "^0.19.5",
     "listr": "^0.14.3",
+    "mysql": "^2.17.1",
     "ncp": "^2.0.0",
-    "nodegit": "^0.26.2",
     "npm-programmatic": "0.0.12",
     "pkg-install": "^1.0.0"
   }

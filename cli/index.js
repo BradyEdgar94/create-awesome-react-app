@@ -27,9 +27,9 @@ function parseArgumentsIntoOptions (rawArgs) {
 
 export async function cli (args) {
   let options = parseArgumentsIntoOptions(args)
-  options = await promoptForMissingOptions(options)
-  await createTemplate(options)
-  options = await promoptForCMSConfiguration(options)
-  await createCMS(options)
-  options = await promoptForMAMPUpdate(options)
+  // options = await promoptForMissingOptions(options)
+  // await createTemplate(options)
+  // options = await promoptForCMSConfiguration(options)
+  // await createCMS(options)
+  // options = await promoptForMAMPUpdate(options)
 }

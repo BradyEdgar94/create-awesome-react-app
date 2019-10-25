@@ -42,8 +42,6 @@ export default async function createProject (options) {
     process.exit(1)
   }
 
-  console.log('Copying template files');
-
   const tasks = new Listr([
     {
       title: 'Copy frontend project files',
@@ -56,8 +54,8 @@ export default async function createProject (options) {
     },
     {
       title: 'Install dependencies',
-      task: () => npm.install(`${options.targetDirectory}/frontend`, {
-        cwd: `${options.targetDirectory}/frontend`,
+      task: () => npm.install(`${options.targetDirectory}/app`, {
+        cwd: `${options.targetDirectory}/app`,
         save: true
       }),
       skip: () =>!options.runInstall

@@ -89,6 +89,13 @@ export async function promoptForCMSConfiguration (options) {
     default: 'forex_db',
   })
 
+  questions.push({
+    type: 'input',
+    name: 'databasePort',
+    message: 'Please enter the port number the mysql server is running on',
+    default: '3306',
+  })
+
   const answers = await inquirer.prompt(questions)
 
   return {
@@ -98,6 +105,7 @@ export async function promoptForCMSConfiguration (options) {
     databasePassword: options.databasePassword || answers.databasePassword,
     databaseName: options.databaseName || answers.databaseName,
     cmsUrl: options.cmsUrl || answers.cmsUrl,
+    databasePort: options.databasePort || answers.databasePort,
   }
 }
 
@@ -115,7 +123,7 @@ export async function promoptForMAMPUpdate (options) {
   questions.push({
     type: 'comfirm',
     name: 'runScript',
-    message: `Now start the React app by entering the '/frontend' directory and running the 'npm run dev' command, you can also run tests using Jest with the 'npm run test' command`,
+    message: `Now start the React app by entering the '/app' directory and running the 'npm run dev' command, you can also run tests using Jest with the 'npm run test' command`,
     default: 'done'
   })
 

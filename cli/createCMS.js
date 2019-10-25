@@ -11,8 +11,8 @@ import cloneCMS from './cloneCMS'
 
 const access = promisify(fs.access)
 
-async function copyAPIFiles (options) {
-  return await cloneCMS(options)
+function copyAPIFiles (options) {
+  return cloneCMS(options)
 }
 
 export default async function createCMS (options) {

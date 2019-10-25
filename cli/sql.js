@@ -10,6 +10,7 @@ export async function createDatabase (options) {
       host: options.databaseHost,
       user: options.databaseUser,
       password: options.databasePassword,
+      port: options.databasePort,
       multipleStatements: true
     }
   }
