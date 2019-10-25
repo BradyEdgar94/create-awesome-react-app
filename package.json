@@ -1,0 +1,31 @@
+{
+  "name": "Ferox",
+  "version": "1.0.0",
+  "description": "A CLI for building the Ferox boilerplate",
+  "bin": {
+    "@bradyedgar/create-awesome-react-app": "bin/create-project",
+    "create-awesome-react-app": "bin/create-project"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cli",
+    "create-project"
+  ],
+  "author": "Brady Edgar",
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^4.1.1",
+    "chalk": "^2.4.2",
+    "child_process": "^1.0.2",
+    "esm": "^3.2.25",
+    "execa": "^3.2.0",
+    "inquirer": "^7.0.0",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "nodegit": "^0.26.2",
+    "npm-programmatic": "0.0.12",
+    "pkg-install": "^1.0.0"
+  }
+}
