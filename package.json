@@ -1,7 +1,7 @@
 {
-  "name": "Ferox",
+  "name": "create-awesome-react-app",
   "version": "1.0.0",
-  "description": "A CLI for building the Ferox boilerplate",
+  "description": "A CLI for building awesome React apps with headless CMS",
   "bin": {
     "@bradyedgar/create-awesome-react-app": "bin/create-project",
     "create-awesome-react-app": "bin/create-project"
@@ -11,7 +11,8 @@
   },
   "keywords": [
     "cli",
-    "create-project"
+    "create-project",
+    "create-awesome-react-app"
   ],
   "author": "Brady Edgar",
   "license": "ISC",
