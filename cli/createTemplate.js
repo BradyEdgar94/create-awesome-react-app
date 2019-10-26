@@ -13,6 +13,22 @@ import cloneTemplate from './cloneTemplate'
 
 const access = promisify(fs.access)
 
+async function createProjectFolder (options) {
+  const project = options.project ? options.project.toLowerCase() : false
+
+  try {
+    if (project && !fs.existsSync(project)){
+      fs.mkdirSync(project)
+    }
+  } catch (err) {
+    throw err
+    console.error(`%s Project ${project} already exist`, chalk.red.bold('ERROR'))
+    process.exit(1)
+  }
+
+  return project
+}
+
 async function copyTemplateFiles (options) {
     return await cloneTemplate(options)
 }
@@ -38,11 +54,15 @@ export default async function createProject (options) {
   try {
     await access(`${options.targetDirectory}`, fs.constants.R_OK)
   } catch (err) {
-    console.error('%s Invalid template name', chalk.red.bold('ERROR'))
+    console.error(`%s Cannot write to ${options.targetDirectory}`, chalk.red.bold('ERROR'))
     process.exit(1)
   }
 
   const tasks = new Listr([
+    {
+      title: 'Create project',
+      task: () => createProjectFolder(options)
+    },
     {
       title: 'Copy frontend project files',
       task: () => copyTemplateFiles(options)
@@ -54,8 +74,8 @@ export default async function createProject (options) {
     },
     {
       title: 'Install dependencies',
-      task: () => npm.install(`${options.targetDirectory}/app`, {
-        cwd: `${options.targetDirectory}/app`,
+      task: () => npm.install(`${options.targetDirectory}${options.project ? `/${options.project}` : ''}/app`, {
+        cwd: `${options.targetDirectory}${options.project ? `/${options.project}` : ''}/app`,
         save: true
       }),
       skip: () =>!options.runInstall

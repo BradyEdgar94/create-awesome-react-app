@@ -20,8 +20,9 @@ function parseArgumentsIntoOptions (rawArgs) {
   return {
     skipPrompts: args['--yes'] || false,
     git: args['--git'] || false,
-    template: args._[0],
+    project: args._[0] || undefined,
     runInstall: args['--install'] || true,
+    template: args['--template'] || undefined,
   }
 }
 

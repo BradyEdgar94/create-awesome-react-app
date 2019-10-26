@@ -18,7 +18,7 @@ export default function cloneCMS (options) {
   return new Promise((resolve, reject) => {
     clone(
       handleGitUrl(options.template.toLowerCase()),
-      `${options.targetDirectory}/api`,
+      `${options.targetDirectory}${options.project ? `/${options.project}` : ''}/api`,
       {},
       (res) => resolve(true)
     )

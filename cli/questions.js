@@ -117,14 +117,14 @@ export async function promoptForMAMPUpdate (options) {
   questions.push({
     type: 'comfirm',
     name: 'mampUpdated',
-    message: `Point ${options.cmsUrl} to ${targetDirectory}/api`,
+    message: `Point ${options.cmsUrl} to ${targetDirectory}${options.project ? `/${options.project}` : ''}/api`,
     default: 'done'
   })
 
   questions.push({
     type: 'comfirm',
     name: 'runScript',
-    message: `Now start the React app by entering the '/app' directory and running the 'npm run dev' command, you can also run tests using Jest with the 'npm run test' command`,
+    message: `Now start the React app by entering the '${targetDirectory}${options.project ? `/${options.project}` : ''}/app' directory and running the 'npm run dev' command, you can also run tests using Jest with the 'npm run test' command`,
     default: 'done'
   })
 

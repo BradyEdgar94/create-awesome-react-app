@@ -56,7 +56,7 @@ export default async function createCMS (options) {
 
 async function configureProject (options) {
   return fs.writeFile(
-    `${options.targetDirectory}/app/app.config.json`,
+    `${options.targetDirectory}${options.project ? `/${options.project}` : ''}/app/app.config.json`,
     JSON.stringify(appConfig(options), null, 4),
     'utf8',
     err => err ? console.log(`%s Issue writing the app.config.json file:  ${err}`, chalk.red.bold('ERROR')) : ''
@@ -84,7 +84,7 @@ async function htaccessFile (options) {
   `
 
   fs.writeFile(
-    `${options.targetDirectory}/api/.htaccess`,
+    `${options.targetDirectory}${options.project ? `/${options.project}` : ''}/api/.htaccess`,
     markup,
     'utf8',
     err => err ? console.log(`%s Issue writing the .htaccess file:  ${err}`, chalk.red.bold('ERROR')) : ''

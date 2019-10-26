@@ -2,7 +2,7 @@ import chalk from 'chalk'
 import fs from 'fs'
 
 export async function createDatabase (options) {
-  const sql = fs.readFileSync(`${options.targetDirectory}/api/default.sql`).toString()
+  const sql = fs.readFileSync(`${options.targetDirectory}${options.project ? `/${options.project}` : ''}/api/default.sql`).toString()
 
   let connection = {
     client: 'mysql',
