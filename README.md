@@ -18,9 +18,9 @@ To get started install the package with the follow command.
 
 **Before running command there are a few important things to note, make sure the following are all true before running the `create-awesome-react-app` command**
 
-> Your terminal is running at least node verison 9 or greater
-> SQL is running on port 3306
-> Ideally you create domains for local repos (MAMP PRO)
+- > Your terminal is running at least node verison 9 or greater
+- > SQL is running on port 3306
+- > Ideally you create domains for local repos (MAMP PRO)
 
 If any of these aren't true, you may run into install issues. If so please add an issue to the github repo so I can fix it as soon as possible.
 

@@ -1,6 +1,6 @@
 {
   "name": "create-awesome-react-app",
-  "version": "1.3.2",
+  "version": "1.3.4",
   "description": "A CLI for building awesome React apps with headless CMS",
   "bin": {
     "@bradyedgar/create-awesome-react-app": "bin/create-project",
@@ -9,10 +9,19 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BradyEdgar94/create-awesome-react-app"
+  },
   "keywords": [
     "cli",
     "create-project",
-    "create-awesome-react-app"
+    "create-react-app",
+    "create-awesome-react-app",
+    "react-boilerplate",
+    "react-starterkit",
+    "react-starter-kit",
+    "react"
   ],
   "author": "Brady Edgar",
   "license": "ISC",
