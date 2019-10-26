@@ -10,6 +10,7 @@ import { projectInstall } from 'pkg-install'
 import { createDatabase } from './sql'
 import npm from 'npm-programmatic'
 import cloneTemplate from './cloneTemplate'
+import { deleteFolderRecursive } from './helpers'
 
 const access = promisify(fs.access)
 
@@ -19,9 +20,10 @@ async function createProjectFolder (options) {
   try {
     if (project && !fs.existsSync(project)){
       fs.mkdirSync(project)
+    } else if (fs.existsSync(project)) {
+      throw err
     }
   } catch (err) {
-    throw err
     console.error(`%s Project ${project} already exist`, chalk.red.bold('ERROR'))
     process.exit(1)
   }
@@ -30,6 +32,10 @@ async function createProjectFolder (options) {
 }
 
 async function copyTemplateFiles (options) {
+    if (fs.existsSync(`${options.targetDirectory}${options.project ? `/${options.project}` : ''}/app`)){
+      deleteFolderRecursive(`${options.targetDirectory}${options.project ? `/${options.project}` : ''}/app`)
+    }
+
     return await cloneTemplate(options)
 }
 

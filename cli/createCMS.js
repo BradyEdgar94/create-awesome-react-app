@@ -8,10 +8,15 @@ import Listr from 'listr'
 import { createDatabase } from './sql'
 import appConfig from './app.config.js'
 import cloneCMS from './cloneCMS'
+import { deleteFolderRecursive } from './helpers'
 
 const access = promisify(fs.access)
 
 function copyAPIFiles (options) {
+  if (fs.existsSync(`${options.targetDirectory}${options.project ? `/${options.project}` : ''}/api`)){
+    deleteFolderRecursive(`${options.targetDirectory}${options.project ? `/${options.project}` : ''}/api`)
+  }
+
   return cloneCMS(options)
 }
 
