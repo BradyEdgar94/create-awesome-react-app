@@ -112,11 +112,12 @@ export async function promoptForCMSConfiguration (options) {
 
 export async function promoptForMAMPUpdate (options) {
   const questions = []
+  const targetDirectory = options.targetDirectory || process.cwd()
 
   questions.push({
     type: 'comfirm',
     name: 'mampUpdated',
-    message: `Point ${options.cmsUrl} to ${options.targetDirectory}/api`,
+    message: `Point ${options.cmsUrl} to ${targetDirectory}/api`,
     default: 'done'
   })
 
